@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data // Lombokを使って自動生成する
 @NoArgsConstructor // Lombokで引数のないデフォルトコンストラクタを生成する
 @AllArgsConstructor // Lombokで全フィールドを引数に持つコンストラクタを生成する
-public class Calendar {
+public class CalendarApp {
 	@Id // エンティティの主キーであるフィールドを示す
 	@GeneratedValue // 主キーがDBで自動採番されることを示す
 	private Integer id;
