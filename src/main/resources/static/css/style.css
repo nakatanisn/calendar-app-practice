@@ -8,3 +8,10 @@
 .error-messages {
 	color: b94a48;
 }
+
+/* カラムの高さを合わせるために追加 */
+.row-eq-height {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-wrap: wrap;
+}
