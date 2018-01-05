@@ -33,6 +33,10 @@ public class CalendarAppController {
 		List<CalendarApp> schedules = calendarAppService.findSchedule(year, month);
 		model.addAttribute("schedulesOfTheMonth", schedules);
 		
+		// 現在の年と月も画面に渡す
+		model.addAttribute("year", year);
+		model.addAttribute("month", month);
+		
 		// コントローラのリクエスト処理メソッドの返り値は「ビュー名」すなわち「遷移する画面名」になる
 		// SpringBootではデフォルトで「classpath:template/ + ビュー名 + .html」が画面のパスになる
 		return "calendar/calendar";
