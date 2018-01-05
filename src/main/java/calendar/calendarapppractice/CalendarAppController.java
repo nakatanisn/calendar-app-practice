@@ -13,7 +13,7 @@ import calendar.calendarapppractice.domain.CalendarApp;
 import calendar.calendarapppractice.service.CalendarAppService;
 
 @Controller
-@RequestMapping(path = "/calendar") // リクエストがマッピングされるURLを定義する
+@RequestMapping(path = "calendar") // リクエストがマッピングされるURLを定義する
 public class CalendarAppController {
 	@Autowired
 	CalendarAppService calendarAppService;
@@ -21,7 +21,8 @@ public class CalendarAppController {
 	// 現在の日付を取得する
 	Calendar now = Calendar.getInstance(); // カレンダーオブジェクトを生成
 	Integer year = now.get(Calendar.YEAR);
-	Integer month = now.get(Calendar.MONTH);
+	Integer month = now.get(Calendar.MONTH) + 1;
+	
 	// 曜日はどうするか検討
 	
 	@GetMapping // listメソッドがURLの/scheduleにマッピングされるように指定
@@ -34,7 +35,7 @@ public class CalendarAppController {
 		
 		// コントローラのリクエスト処理メソッドの返り値は「ビュー名」すなわち「遷移する画面名」になる
 		// SpringBootではデフォルトで「classpath:template/ + ビュー名 + .html」が画面のパスになる
-		return "/calendar";
+		return "calendar/calendar";
 	}
 	
 }

@@ -1,4 +1,4 @@
-INSERT INTO customers(first_name, last_name) VALUES('Nobita', 'Nobi');
-INSERT INTO customers(first_name, last_name) VALUES('Takeshi', 'Goda');
-INSERT INTO customers(first_name, last_name) VALUES('Suneo', 'Honekawa');
-INSERT INTO customers(first_name, last_name) VALUES('Shizuka', 'Minamoto');
+INSERT INTO schedule(year, month, day, day_of_week, name, content)
+ VALUES(2018, 1, 2, 3, 'Yamada', '新宿勤務');
+INSERT INTO schedule(year, month, day, day_of_week, name, content)
+ VALUES(2018, 1, 2, 3, 'Tanaka', '渋谷勤務');

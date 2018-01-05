@@ -30,11 +30,11 @@ public class CalendarApp {
 	private Integer day;
 	
 	@Column(nullable = false)
-	private String day_of_week;
+	private Integer day_of_week;
 	
 	@Column(nullable = false)
 	private String name;
 	
 	@Column(nullable = false)
-	private String schedule;
+	private String content;
 }
