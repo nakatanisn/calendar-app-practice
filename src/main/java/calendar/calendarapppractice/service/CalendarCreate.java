@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalendarCreate {
-	public List<Integer> getCalendar(Calendar calendar) {
+	public List<Integer> getCalendar() {
 		Calendar today = Calendar.getInstance(); // カレンダーオブジェクトを生成
 		today.setFirstDayOfWeek(Calendar.MONDAY); // 週の最初の曜日を月曜日に設定（デフォルトでは日曜日始まり）
 		
@@ -41,9 +41,7 @@ public class CalendarCreate {
 		} 
 		
 		int date = 1; // listに設定する日付を初期化
-		
 		while (setNum <= maxNum) { // Listの要素は0から始まるので、setNumがはじめに値を入れる要素番号になる
-			System.out.println("date : " + date);
 			if (date > days) {
 				break;
 			}
