@@ -18,16 +18,14 @@ public class CalendarAppController {
 	@Autowired
 	CalendarAppService calendarAppService;
 	
-	// 現在の日付を取得する
-	Calendar now = Calendar.getInstance(); // カレンダーオブジェクトを生成
-	Integer year = now.get(Calendar.YEAR);
-	Integer month = now.get(Calendar.MONTH) + 1;
-	
-	// 曜日はどうするか検討
-	
-	@GetMapping // listメソッドがURLの/scheduleにマッピングされるように指定
+	@GetMapping // getScheduleメソッドがURLの/scheduleにマッピングされるように指定
 	// 画面に値を渡すために、Modelオブジェクトを使用
 	String getSchedule(Model model) {
+		
+		// 現在の日付を取得する
+		Calendar cal = Calendar.getInstance(); // カレンダーオブジェクトを生成
+		Integer year = cal.get(Calendar.YEAR);
+		Integer month = cal.get(Calendar.MONTH) + 1;
 		
 		// findScheduleの結果をModelに設定し、属性名を"schedulesOfTheMonth"として設定
 		List<CalendarApp> schedules = calendarAppService.findSchedule(year, month);
