@@ -46,7 +46,7 @@
 							<tr>
 								<td th:each="list : ${dateList}"
 									th:if="${listStat.index &lt; 7}"> <!-- 1週目はリストのindex7番目以下の部分に入っている -->
-									<div th:if="${list != 0}">
+									<div th:if="${list != 0}">  <!-- 日付に0がセットされている場合は表示しないように条件を設定 -->
 										<span th:text="${list}"></span>
 									</div>
 								</td>

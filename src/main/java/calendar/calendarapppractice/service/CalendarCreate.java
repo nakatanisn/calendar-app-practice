@@ -25,7 +25,7 @@ public class CalendarCreate {
 		
 		int maxNum = weeks * 7; // カレンダーに表示する日数の枠の数を定義
 		
-		// listを0で初期化する
+		// listを0で初期化する(1-31の日付が入らない部分には0が入る)
 		int i = 0;
 		while (true) {
 			if (maxNum <= i) {
