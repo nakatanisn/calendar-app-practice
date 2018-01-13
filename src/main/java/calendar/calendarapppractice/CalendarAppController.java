@@ -76,12 +76,12 @@ public class CalendarAppController {
 		return "calendar/calendar";
 	}
 	
+	// 表示している月の次月を表示する
 	@GetMapping(path = "nextMonth")
 	String nextMonth(@RequestParam Integer curDispYear, @RequestParam Integer curDispMonth, Model model) {
 		Integer year = curDispYear;
-		Integer month = curDispMonth - 1; // 表示している月をjava.util.Calendarでの月の定数に変換
-		month = month + 1; // 表示している月の次月の月の定数を設定
-		// 前年に戻る場合の処理
+		Integer month = curDispMonth - 1;
+		month = month + 1;
 		if (month == 12) {
 			month = 0;
 			year = year + 1;
@@ -101,10 +101,5 @@ public class CalendarAppController {
 		model.addAttribute("month", dispMonth);
 		return "calendar/calendar";
 	}
-	
-	// 現在の月を表示する
-	@GetMapping(params = "goToTop")
-	String goToTop() {
-		return "redirect:/calendar";
-	}
+
 }
