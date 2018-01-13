@@ -46,7 +46,9 @@
 							<tr>
 								<td th:each="list : ${dateList}"
 									th:if="${listStat.index &lt; 7}"> <!-- 1週目はリストのindex7番目以下の部分に入っている -->
-									<span th:text="${list}"></span>
+									<div th:if="${list != 0}">
+										<span th:text="${list}"></span>
+									</div>
 								</td>
 							</tr>
 							<!-- 1週目の予定欄作成 -->
@@ -114,13 +116,34 @@
 							<tr>
 								<td th:each="list : ${dateList}"
 									th:if="${28 &lt;= listStat.index &amp;&amp; listStat.index &lt; 35}">
-									<span th:text="${list}"></span>
+									<div th:if="${list != 0}">
+										<span th:text="${list}"></span>
+									</div>
 								</td>
 							</tr>
 							<!-- 5週目の予定欄作成 -->
 							<tr>
 								<td th:each="list : ${dateList}"
 									th:if="${28 &lt;= listStat.index &amp;&amp; listStat.index &lt; 35}">
+									<div th:each="schedule : ${schedulesOfTheMonth}">
+										<span th:if="${list == schedule.day}"
+											  th:text="${schedule.name} + ' : ' + ${schedule.content}"></span>
+									</div>
+								</td>
+							</tr>
+							<!-- 6週目の日付欄作成 -->
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${35 &lt;= listStat.index &amp;&amp; listStat.index &lt; 42}">
+									<div th:if="${list != 0}">
+										<span th:text="${list}"></span>
+									</div>
+								</td>
+							</tr>
+							<!-- 6週目の予定欄作成 -->
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${35 &lt;= listStat.index &amp;&amp; listStat.index &lt; 42}">
 									<div th:each="schedule : ${schedulesOfTheMonth}">
 										<span th:if="${list == schedule.day}"
 											  th:text="${schedule.name} + ' : ' + ${schedule.content}"></span>
