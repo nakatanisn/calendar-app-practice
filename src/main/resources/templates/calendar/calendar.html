@@ -43,86 +43,86 @@
 						</thead>
 						<tbody>
 							<!-- 1週目の日付欄作成 -->
-							<tr th:each="list : ${dateList}"
-								th:if="${listStat.index &lt; 7}"> <!-- 1週目はリストのindex7番目以下の部分に入っている -->
-								<td>
-									<span th:text="${list.toString(listStat.index)}"></span>
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${listStat.index &lt; 7}"> <!-- 1週目はリストのindex7番目以下の部分に入っている -->
+									<span th:text="${list}"></span>
 								</td>
 							</tr>
 							<!-- 1週目の予定欄作成 -->
-							<tr th:each="list : ${dateList}"
-								th:if="${listStat.index &lt; 7}">
-								<td>
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${listStat.index &lt; 7}">
 									<div th:each="schedule : ${schedulesOfTheMonth}">
-										<span th:if="${list.toString(listStat.index) == schedule.day}"
+										<span th:if="${list == schedule.day}"
 											  th:text="${schedule.name} + ' : ' + ${schedule.content}"></span>
 									</div>
 								</td>
 							</tr>
 							<!-- 2週目の日付欄作成 -->
-							<tr th:each="list : ${dateList}"
-								th:if="${7 &lt;= listStat.index &amp;&amp; listStat.index &lt; 14}">
-								<td>
-									<span th:text="${list.toString(listStat.index)}"></span>
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${7 &lt;= listStat.index &amp;&amp; listStat.index &lt; 14}">
+									<span th:text="${list}"></span>
 								</td>
 							</tr>
 							<!-- 2週目の予定欄作成 -->
-							<tr th:each="list : ${dateList}"
-								th:if="${7 &lt;= listStat.index &amp;&amp; listStat.index &lt; 14}">
-								<td>
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${7 &lt;= listStat.index &amp;&amp; listStat.index &lt; 14}">
 									<div th:each="schedule : ${schedulesOfTheMonth}">
-										<span th:if="${list.toString(listStat.index) == schedule.day}"
+										<span th:if="${list == schedule.day}"
 											  th:text="${schedule.name} + ' : ' + ${schedule.content}"></span>
 									</div>
 								</td>
 							</tr>
 							<!-- 3週目の日付欄作成 -->
-							<tr th:each="list : ${dateList}"
-								th:if="${14 &lt;= listStat.index &amp;&amp; listStat.index &lt; 21}">
-								<td>
-									<span th:text="${list.toString(listStat.index)}"></span>
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${14 &lt;= listStat.index &amp;&amp; listStat.index &lt; 21}">
+									<span th:text="${list}"></span>
 								</td>
 							</tr>
 							<!-- 3週目の予定欄作成 -->
-							<tr th:each="list : ${dateList}"
-								th:if="${14 &lt;= listStat.index &amp;&amp; listStat.index &lt; 21}">
-								<td>
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${14 &lt;= listStat.index &amp;&amp; listStat.index &lt; 21}">
 									<div th:each="schedule : ${schedulesOfTheMonth}">
-										<span th:if="${list.toString(listStat.index) == schedule.day}"
+										<span th:if="${list == schedule.day}"
 											  th:text="${schedule.name} + ' : ' + ${schedule.content}"></span>
 									</div>
 								</td>
 							</tr>
 							<!-- 4週目の日付欄作成 -->
-							<tr th:each="list : ${dateList}"
-								th:if="${21 &lt;= listStat.index &amp;&amp; listStat.index &lt; 28}">
-								<td>
-									<span th:text="${list.toString(listStat.index)}"></span>
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${21 &lt;= listStat.index &amp;&amp; listStat.index &lt; 28}">
+									<span th:text="${list}"></span>
 								</td>
 							</tr>
 							<!-- 4週目の予定欄作成 -->
-							<tr th:each="list : ${dateList}"
-								th:if="${21 &lt;= listStat.index &amp;&amp; listStat.index &lt; 28}">
-								<td>
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${21 &lt;= listStat.index &amp;&amp; listStat.index &lt; 28}">
 									<div th:each="schedule : ${schedulesOfTheMonth}">
-										<span th:if="${list.toString(listStat.index) == schedule.day}"
+										<span th:if="${list == schedule.day}"
 											  th:text="${schedule.name} + ' : ' + ${schedule.content}"></span>
 									</div>
 								</td>
 							</tr>
 							<!-- 5週目の日付欄作成 -->
-							<tr th:each="list : ${dateList}"
-								th:if="${28 &lt;= listStat.index &amp;&amp; listStat.index &lt; 35}">
-								<td>
-									<span th:text="${list.toString(listStat.index)}"></span>
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${28 &lt;= listStat.index &amp;&amp; listStat.index &lt; 35}">
+									<span th:text="${list}"></span>
 								</td>
 							</tr>
 							<!-- 5週目の予定欄作成 -->
-							<tr th:each="list : ${dateList}"
-								th:if="${28 &lt;= listStat.index &amp;&amp; listStat.index &lt; 35}">
-								<td>
+							<tr>
+								<td th:each="list : ${dateList}"
+									th:if="${28 &lt;= listStat.index &amp;&amp; listStat.index &lt; 35}">
 									<div th:each="schedule : ${schedulesOfTheMonth}">
-										<span th:if="${list.toString(listStat.index) == schedule.day}"
+										<span th:if="${list == schedule.day}"
 											  th:text="${schedule.name} + ' : ' + ${schedule.content}"></span>
 									</div>
 								</td>

@@ -20,7 +20,7 @@ public class CalendarCreate {
 		
 		int firstDayOfWeek = firstDay.get(Calendar.DAY_OF_WEEK); // その月のはじめの曜日を取得
 		
-		// 画面に表示する日数の枠と日付を入れたListを作成
+		// 画面に表示する日数の枠と日付を入れるListを作成
 		List<Integer> list = new ArrayList<>();
 		
 		int maxNum = weeks * 7; // カレンダーに表示する日数の枠の数を定義
