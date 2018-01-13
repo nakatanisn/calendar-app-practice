@@ -16,16 +16,33 @@
 		<hr/>
 		<div class="row">
 			<div class="col-sm-12">
-				<h3>
+				<h1>
 					<span th:text="${year} + '年 ' + ${month} + '月'"> YYYY年 MM月 </span>
-					<button class="btn btn-default btn-sm">
-						<span class="glyphicon glyphicon-menu-left"></span>
-					</button>
-					<button class="btn btn-default btn-sm">
-						<span class="glyphicon glyphicon-menu-right"></span>
-					</button>
-				</h3>
+				</h1>
+				
+				<div class="form-group">
+					<form th:action="@{/calendar/prevMonth}" method="get">
+						<button class="btn btn-default btn-sm">
+							<span class="glyphicon glyphicon-menu-left"></span>
+						</button>
+						<input type="hidden" name="curDispYear" th:value="${year}"/>
+						<input type="hidden" name="curDispMonth" th:value="${month}"/>
+					</form>
+					
+					<form th:action="@{/calendar/nextMonth}" method="get">
+						<button class="btn btn-default btn-sm">
+							<span class="glyphicon glyphicon-menu-right"></span>
+						</button>
+						<input type="hidden" name="curDispYear" th:value="${year}"/>
+						<input type="hidden" name="curDispMonth" th:value="${month}"/>
+					</form>
+					
+					<form th:action="@{/calendar}">
+						<button class="btn btn-primary btn-sm" type="submit">現在の月を表示</button>
+					</form>
+				</div>
 			</div>
+			
 			<!-- ここからカレンダーの作成 -->
 			<div class="col-md-12">
 					<div class="table-responsive">
