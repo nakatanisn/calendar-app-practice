@@ -8,16 +8,17 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalendarCreate {
-	public List<Integer> getCalendar() {
-		Calendar today = Calendar.getInstance(); // カレンダーオブジェクトを生成
-		today.setFirstDayOfWeek(Calendar.MONDAY); // 週の最初の曜日を月曜日に設定（デフォルトでは日曜日始まり）
+	public List<Integer> getCalendar(Integer year, Integer month) {
+		Calendar dispCal = Calendar.getInstance(); // カレンダーオブジェクトを生成
+		dispCal.setFirstDayOfWeek(Calendar.MONDAY); // 週の最初の曜日を月曜日に設定（デフォルトでは日曜日始まり）
+		dispCal.set(year, month, 1); // 引数に指定した「年」と「月」を設定
 		
 		Calendar firstDay = Calendar.getInstance(); // 月初めの曜日を取得するためのオブジェクトを生成
 		firstDay.set(Calendar.DATE, 1); // 1日をセット
 		
-		int weeks = today.getActualMaximum(Calendar.WEEK_OF_MONTH); // その月に何週まであるのか、最大週を取得（週の最初が月曜か日曜かで週数が変わる）
-		int days = today.getActualMaximum(Calendar.DAY_OF_MONTH); // その月に何日まであるのか、最大日を取得
-		
+		int weeks = dispCal.getActualMaximum(Calendar.WEEK_OF_MONTH); // その月に何週まであるのか、最大週を取得（週の最初が月曜か日曜かで週数が変わる）
+		int days = dispCal.getActualMaximum(Calendar.DAY_OF_MONTH); // その月に何日まであるのか、最大日を取得
+
 		int firstDayOfWeek = firstDay.get(Calendar.DAY_OF_WEEK); // その月のはじめの曜日を取得
 		
 		// 画面に表示する日数の枠と日付を入れるListを作成
